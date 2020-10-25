@@ -1,24 +1,24 @@
-// import dotenv from 'dotenv'
-  
+import dotenv from 'dotenv'
 
-// console.log( process.env.SANITY_TOKEN)
+dotenv.config({path:'.env'})
+
 export default {
-
-  siteMetadata: {
-    title: `slice pizza`,
-    siteUrl:'https://gatsby.pizza',
-    description: `latihan gatsby`,
+    siteMetadata:{
+    title:`Slice pizza`,
+    siteUrl:`https://gatsby.pizza`,
+    description:'learn gatsby',
   },
-  plugins: [
-     'gatsby-plugin-styled-components',
+  plugins:[
+    'gatsby-plugin-styled-components',
     {
-      resolve:`gatsby-source-sanity`,
+      //this is the name of the plugin you are adding.
+      resolve:'gatsby-source-sanity',
       options:{
         projectId:'4pqnmtut',
         dataset:'production',
-        watchMode:true,
-        token: process.env.SANITY_TOKEN,
-      }
+        watchmode:true,
+        token: process.env.SANITY_TOKEN
+      } 
     }
-  ],
+  ]
 }
